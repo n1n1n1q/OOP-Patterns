@@ -1,9 +1,12 @@
 package ua.edu.ucu.apps.image;
 
+import lombok.Getter;
+
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+@Getter
 public class RealImage implements MyImage {
     private JFrame frame;
 

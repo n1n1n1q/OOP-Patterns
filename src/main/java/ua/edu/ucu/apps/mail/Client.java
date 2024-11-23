@@ -1,12 +1,11 @@
 package ua.edu.ucu.apps.mail;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 
-@ToString @AllArgsConstructor @Getter
+@ToString @AllArgsConstructor @Getter @NoArgsConstructor
+@Setter
 public class Client {
     private static int counter = 0;
     private final int id = counter++;
