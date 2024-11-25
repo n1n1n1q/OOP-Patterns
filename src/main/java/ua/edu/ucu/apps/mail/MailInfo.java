@@ -4,9 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import ua.edu.ucu.apps.mail.mailcode.MailCode;
 
-@AllArgsConstructor
+@AllArgsConstructor @Getter
 public class MailInfo {
-    @Getter
     private Client client;
     private MailCode mailCode;
     public String generate() {
