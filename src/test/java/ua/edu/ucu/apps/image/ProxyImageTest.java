@@ -1,15 +1,17 @@
 package ua.edu.ucu.apps.image;
 
 
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.awt.*;
 
 import static org.junit.Assert.assertEquals;
 
 public class ProxyImageTest {
     private ProxyImage proxyImage;
     private TestRealImage realImage;
-
     private static class TestRealImage extends RealImage {
         private int displayCount = 0;
 
@@ -29,6 +31,8 @@ public class ProxyImageTest {
 
     @Before
     public void setUp() {
+        Assume.assumeFalse("Skipping GUI tests in headless environment",
+                GraphicsEnvironment.isHeadless());
         realImage = new TestRealImage("testPath");
         proxyImage = new ProxyImage("testPath") {
             @Override

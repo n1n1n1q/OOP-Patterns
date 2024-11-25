@@ -17,16 +17,12 @@ public class StudentTest {
                 .grade(90)
                 .grade(85)
                 .group("CS-101")
-                .firstName("Anton")
-                .lastName("Anten")
                 .build();
 
         assertEquals(20, student.getAge());
         assertEquals(180, student.getHeight());
         assertEquals(Arrays.asList(90, 85), student.getGrades());
         assertEquals("CS-101", student.getGroup());
-        assertEquals("Anton", student.getFirstName());
-        assertEquals("Anten", student.getLastName());
     }
 
     @Test
@@ -41,7 +37,7 @@ public class StudentTest {
                 .lastName("Doe")
                 .build();
 
-        String expectedString = "Student(firstName=John, lastName=Doe, age=22, height=175, grades=[88, 92], group=CS-102)";
+        String expectedString = "Student(age=22, height=175, grades=[88, 92], group=CS-102)";
         assertEquals(expectedString, student.toString());
     }
 }

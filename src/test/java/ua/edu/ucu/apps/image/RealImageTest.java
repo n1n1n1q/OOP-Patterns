@@ -1,12 +1,21 @@
 package ua.edu.ucu.apps.image;
 
+import org.junit.Assume;
+import org.junit.Before;
 import org.junit.Test;
 import javax.swing.JFrame;
+
+import java.awt.*;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class RealImageTest {
+    @Before
+    public void setUp() {
+        Assume.assumeFalse("Skipping GUI tests in headless environment",
+                GraphicsEnvironment.isHeadless());
+    }
 
     @Test
     public void testRealImageConstructor() {
